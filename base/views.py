@@ -69,6 +69,7 @@ class PostDeleteView(LoginRequiredMixin,UserPassesTestMixin, DeleteView):
         return False
 
 
+@login_required(login_url='login')
 def Insert(request):
     form = Bookborrow()
     if request.method == 'POST':
@@ -81,6 +82,7 @@ def Insert(request):
 
 
 
+@login_required(login_url='login')
 def View(request):
     user = Borrow.objects.all()
     content = {'user':user}
