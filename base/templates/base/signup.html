@@ -1,0 +1,117 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mehedi SignUP</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static '/css/signup.css' %}">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+
+
+	<img class="wave" src="{% static 'images/wave.png' %}">
+	<div class="container">
+		<div class="img">
+			<img src="{% static 'images/bg.svg' %}">
+		</div>
+
+		<div class="login-content">
+			<form action="" method="post">
+				{% csrf_token %}
+
+
+
+				<h2 class="title">SignUP</h2>
+				<div class="input-div one">
+					 <div class="i">
+							<i class="fas fa-user"></i>
+					 </div>
+					 <div class="div">
+							<h5>Username</h5>
+							<input  type="text" class="input" id="{{form.username.auto_id}}"  name="{{form.username.html_name}}" >
+
+
+					 </div>
+				</div>
+
+
+				<div class="input-div one">
+					 <div class="i">
+							<i class="fas fa-user"></i>
+					 </div>
+					 <div class="div">
+							<h5>First Name</h5>
+							<input type="text" class="input"  id="{{form.first_name.auto_id}}"  name="{{form.first_name.html_name}}" 	>
+
+					 </div>
+				</div>
+
+
+
+              <div class="input-div one">
+                 <div class="i">
+                    <i class="fas fa-user"></i>
+                 </div>
+                 <div class="div">
+                    <h5>Last Name</h5>
+                    <input type="text" class="input"  id="{{form.last_name.auto_id}}"  name="{{form.last_name.html_name}}">
+
+                 </div>
+              </div>
+
+
+							<div class="input-div one">
+                 <div class="i">
+                    <i class="fas fa-user"></i>
+                 </div>
+                 <div class="div">
+                    <h5>Email</h5>
+                    <input type="text" class="input"  id="{{form.email.auto_id}}"  name="{{form.email.html_name}}">
+
+                 </div>
+              </div>
+
+
+
+
+           		<div class="input-div pass">
+           		   <div class="i">
+           		    	<i class="fas fa-lock"></i>
+           		   </div>
+           		   <div class="div">
+           		    	<h5>Password</h5>
+           		    	<input type="password" class="input" id="{{form.password1.auto_id}}"  name="{{form.password1.html_name}}" >
+
+            	   </div>
+            	</div>
+
+              <div class="input-div pas">
+           		   <div class="i">
+           		    	<i class="fas fa-lock"></i>
+           		   </div>
+           		   <div class="div">
+           		    	<h5>Re-Enter Password</h5>
+           		    	<input type="password" class="input" id="{{form.password2.auto_id}}"  name="{{form.password2.html_name}}" >
+
+            	   </div>
+            	</div>
+
+              {{form.errors}}
+
+            	<input type="submit" class="btn" value="SignUP">
+
+								<a  href="{% url 'login'%}"> <p>Go to Login page</p></a>
+
+
+            </form>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="{% static '/js/signup.js' %}"></script>
+</body>
+</html>

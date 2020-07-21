@@ -1,0 +1,35 @@
+{% extends "base/base.html" %}
+{% block content %}
+
+    <table class="table table-hover table-dark">
+      <h1>Book Borrowing Register Page</h1>
+      <br>
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Author Name</th>
+      <th scope="col">Book Name</th>
+      <th scope="col">Book Taking Time</th>
+      <th scope="col">Book Returning Date</th>
+
+    </tr>
+  </thead>
+  <tbody>
+      {% for users in user %}
+
+    <tr>
+      <th scope="row"></th>
+      <td>{{ users.user }}</td>
+      <td>{{users.book}}</td>
+      <td>{{users.date_posted}}</td>
+      <td>{{users.book_return}}</td>
+
+    </tr>
+
+     {% endfor %}
+
+  </tbody>
+</table>
+
+
+{% endblock %}

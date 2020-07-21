@@ -1,0 +1,122 @@
+{% extends 'base/base.html'%}
+
+{% load static %}
+{% block content %}
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+  </head>
+  <body>
+
+    <div class="container">
+        <div class="col-md-16">
+    		<div class="row">
+
+    			{% for book in  books %}
+
+    				<div class="col-lg-6">
+    					<br>
+    					<div class="card card-body">
+    						<a href="{% url 'post-detail' book.id %}"><h3>Book Name : {{book.book_name}}</h3></a>
+    						<a href="{% url 'post-detail' book.id %}"><img src={{book.pic.url}}></a>
+    						<hr>
+    						<a href="{% url 'post-detail' book.id %}"><h4> Author Name : {{book.author_name}}</h4></a>
+    						<hr>
+    					  <h4>Book status : <span class="badge badge-secondary"> {{book.status}}</span></h4>
+    						<hr>
+    						<a class="btn btn-sm btn-warning" href="{% url 'insert'%}">Borrow Book</a>
+
+    					</div>
+    				</div>
+             {% endfor %}
+    		</div>
+    	</div>
+      </div>
+
+  </div>
+
+
+
+
+
+  <div class="col-md-4">
+    <h5 class=" card card-header">Our Library</h5>
+    <div class="card card-body">
+
+        <h6>Southwest Petroleum University (SWPU) Library consists of Nanchong Campus Library and Chengdu Campus Library.
+           Chengdu Campus Library comprises the main library and a branch library. The main library, whose construction
+           started in September 2002, was put into use in February 2008, while the branch library was put into use in December 2016.
+           <br>
+           <br>
+           <img src="{% static 'images/library.jpg'%}" alt="">
+           <br>
+           <br>
+
+          SWPU Library features oil and gas literature, though it has a collection which covers a wide range of disciplines,
+           including science, engineering, management, economics, liberal arts, law and education. Currently, there are 42
+           professional databases, and 1.9 million volumes of printed books and journals, not including those (about 170,000)
+            acquired by the individual schools on the two campuses.
+          <br><br>
+          <img src="{% static 'images/library1.jpg'%}" alt="">
+          <br><br>
+
+          This library provides a series of services, such as online bibliographic retrieval, remote access, self-help borrowing
+          and returning, document delivery, interlibrary loan, information consulting, sci-tech novelty retrieval, resources
+          recommendation, and so on. Besides, the library holds regular training workshops for different groups of readers,
+          such as for freshmen on how to use the library, and for seniors on how to take full advantage of the library
+          resources to carry out graduation projects or write graduation theses.
+
+          <br><br>
+          <img src="{% static 'images/library2.jpg'%}" alt="">
+          <br><br>
+
+           Meanwhile, the library initiates annual
+          activities around the "4.23 World Reading Day" to promote the use of the abundant resources. Moreover,
+           it provides information services for local scientific research institutions.
+          </h6>
+
+
+    </div>
+
+  </div>
+
+
+
+</div>
+
+
+
+{% block footer %}
+<footer class="py-5 navbar-light" style="background-color: #cfd8dc;>
+  <div class="container">
+    <h4 class="m-0 text-center text-black">Copyright &copy; Mehedi 2020</h4>
+  </div>
+
+{% endblock %}
+
+</footer>
+
+
+
+
+
+
+
+  </body>
+
+
+
+</html>
+
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "base/base.html" %}
+{% block content %}
+
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="#"><h4>{{ object.author }}</h4></a>
+              <small class="text-muted">{{ object.date_posted|date:"F d, Y" }}</small>
+              {% if object.author == user %}
+              <div >
+                <a class="btn  btn-primary" href="{% url 'post-update' object.id %}">Update</a>
+                <a class="btn  btn-danger" href="{% url 'post-delete' object.id %}">Delete</a>
+
+              </div>
+
+
+              {% endif %}
+            </div>
+            <h2>Book Name : {{ book.book_name }}</h2>
+            <br>
+              <img class="card-img-top" src="{{ book.pic.url }}" alt="Card image cap">
+              <br>
+            <h2 class="article-content">Author Name : {{ book.author_name }}</h2>
+          </div>
+        </article>
+
+{% endblock content %}
